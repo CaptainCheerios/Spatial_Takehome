@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456944505446248993}
+  - component: {fileID: -4340514375333714520}
   - component: {fileID: 3600837969323212164}
   - component: {fileID: 1593227842209925454}
   - component: {fileID: -5882921637424971890}
   - component: {fileID: -297558322304554669}
-  - component: {fileID: -4340514375333714520}
   m_Layer: 3
   m_Name: Book_7_Grabbable
   m_TagString: Untagged
@@ -36,6 +36,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4340514375333714520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944828173571385499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6151057ce48f7f4b95c4de4595ce094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabbableObject
+  rigidBody: {fileID: -297558322304554669}
+  breakForce: 1
+  maxCreatureCount: 8
+  breakVFXPrefab: {fileID: 0}
+  breakSFX: {fileID: 0}
+  impactSFX: []
+  meshRenderers:
+  - {fileID: 1593227842209925454}
 --- !u!33 &3600837969323212164
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -123,8 +143,8 @@ Rigidbody:
   m_GameObject: {fileID: 944828173571385499}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 1.5
+  m_AngularDamping: 1.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -141,16 +161,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-4340514375333714520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944828173571385499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6151057ce48f7f4b95c4de4595ce094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GrabbableObject
-  rb: {fileID: 0}

@@ -46,7 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6151057ce48f7f4b95c4de4595ce094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabbableObject
-  rb: {fileID: -3309253566846028846}
+  rigidBody: {fileID: -3309253566846028846}
+  breakForce: 1
+  maxCreatureCount: 8
+  breakVFXPrefab: {fileID: 0}
+  breakSFX: {fileID: 0}
+  impactSFX: []
+  meshRenderers: []
 --- !u!65 &-7920268750281831808
 BoxCollider:
   m_ObjectHideFlags: 0
