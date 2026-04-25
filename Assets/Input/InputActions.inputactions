@@ -34,7 +34,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Launch",
+                    "name": "Vacuum",
                     "type": "Button",
                     "id": "2f4c0f1c-062c-4d81-a386-70deb2179189",
                     "expectedControlType": "",
@@ -59,6 +59,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "1dc58af5-ccd2-41c5-bc2b-e06d55a1bbb0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -102,7 +111,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Launch",
+                    "action": "Vacuum",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -171,6 +180,17 @@
                     "action": "MoveLeft",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2621f31f-7c59-4fff-9cb9-f350a33c0b80",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
