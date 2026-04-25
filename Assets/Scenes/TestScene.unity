@@ -507,11 +507,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 1dc58af5-ccd2-41c5-bc2b-e06d55a1bbb0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: 'Gameplay/Sprint[/Keyboard/shift]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7524636986677283322}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSprint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScooperCharacterController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648283271834380451, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+--- !u!114 &7524636986677283322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3850071031672443547, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+  m_PrefabInstance: {fileID: 7524636986677283319}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302d420e0dfb5564cbdeafbb351c4e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabberCamera
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
