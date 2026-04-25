@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour
     
     public Camera camera;
 
+    private bool _initialMouseMovement;
+
     public void Start()
     {
         Cursor.visible = false;
@@ -38,6 +40,12 @@ public class CharacterController : MonoBehaviour
   
     public void OnLook(InputAction.CallbackContext context)
     {
+        if (!_initialMouseMovement)
+        {
+            _initialMouseMovement = true;
+            return;
+        }
+
         Vector2 mouseDelta = context.ReadValue<Vector2>();
 
         _currentPitch -= mouseDelta.y * PitchSensistivity;
