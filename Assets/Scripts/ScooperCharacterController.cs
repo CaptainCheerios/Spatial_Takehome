@@ -83,7 +83,10 @@ public class ScooperCharacterController : MonoBehaviour
 
     public void OnSprint(InputAction.CallbackContext context)
     {
-        _sprint = context.ReadValue<bool>();
+        if (context.performed)
+            _sprint = true;
+        else if (context.canceled)
+            _sprint = false;
     }
     #endregion
     
