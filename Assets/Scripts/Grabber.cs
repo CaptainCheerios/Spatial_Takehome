@@ -91,6 +91,11 @@ public class Grabber : MonoBehaviour
                         grabbableObject.SetHighlight(true);
                 }
             }
+            else
+            {
+                targetedObject.SetHighlight(false);
+                targetedObject = null;
+            }
         }
     }
 

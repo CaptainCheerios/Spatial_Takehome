@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -32,7 +35,8 @@ public class GrabbableObject : MonoBehaviour
     private void OnValidate()
     {
         //So I don't have to deal with assigning these
-        meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        List<MeshRenderer> meshRenderersFound = GetComponents<MeshRenderer>().ToList();
+        meshRenderersFound.AddRange(GetComponentsInChildren<MeshRenderer>());
         if (meshRenderers.Length == 0)
         {
             Debug.LogWarning($"{this.name} was unable to find any mesh renderers" );
@@ -109,6 +113,13 @@ public class GrabbableObject : MonoBehaviour
 
     public void SetHighlight(bool enable)
     {
-        //TODO: ENALE HIGHLIGHT EFFECT
+        foreach (var meshRenderer in meshRenderers)
+        {
+            uint outlineLayer = (uint)1 << 8;
+            meshRenderer.renderingLayerMask = enable
+                ? meshRenderer.renderingLayerMask | outlineLayer
+                : meshRenderer.renderingLayerMask & ~outlineLayer;
+ 
+        }
     }
 }
