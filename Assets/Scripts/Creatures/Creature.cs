@@ -16,7 +16,7 @@ public class Creature : MonoBehaviour
         Rigidbody.angularVelocity = Vector3.zero;
         Rigidbody.AddForce(Random.onUnitSphere * spawnImpulse, ForceMode.Impulse);
         currentState = new IdleState();
-        CaptureGameMode.Instance.RegisterCreature();
+        // CaptureGameMode.Instance.RegisterCreature();
     }
 
     public void Captured()

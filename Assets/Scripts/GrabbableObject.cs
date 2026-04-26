@@ -14,6 +14,7 @@ public class GrabbableObject : MonoBehaviour
     public float breakForce = 1f;
     [NonSerialized] public bool isBroken = false;
     [Range(0,8)] public int maxCreatureCount = 8;
+    public float critterSpawnRadius = 0.1f;
     
     [Header("Visuals/FX")]
     public GameObject breakVFXPrefab;
@@ -97,8 +98,13 @@ public class GrabbableObject : MonoBehaviour
         //Spawn Creatures
         for (int i = 0; i < maxCreatureCount; i++)
         {
-            //TODO: Spawn in creature
+            CreatureManager.Instance.Get().Spawn(transform.position + GetRandomSpawnOffset());
         }
+    }
+
+    private Vector3 GetRandomSpawnOffset()
+    {
+        return Random.insideUnitSphere * critterSpawnRadius;
     }
 
     public void SetHighlight(bool enable)

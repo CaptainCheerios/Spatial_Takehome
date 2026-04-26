@@ -1401,6 +1401,70 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &523118508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523118510}
+  - component: {fileID: 523118509}
+  - component: {fileID: 523118511}
+  m_Layer: 0
+  m_Name: CreatureManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &523118509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523118508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fc8fd82953d674da50e00e4f9ffcbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureManager
+  creaturePrefab: {fileID: 579535908545523599, guid: b696d07370309d84390613f812b5e8ac, type: 3}
+  creatureMaxCapactiy: 240
+  spawnPosition: {x: 0, y: -300, z: 0}
+--- !u!4 &523118510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523118508}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07642, y: -0, z: -0.13424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523118511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523118508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907d4da6d9454eaca3931d3150d111a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaptureGameMode
+  spawned: 0
+  captured: 0
+  allContainersBroken: 0
+  timerLength: 120
 --- !u!1 &537778984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6877,6 +6941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_1
       objectReference: {fileID: 0}
+    - target: {fileID: 9149224886979190117, guid: 382471a68bcedb042af1784c23524cf1, type: 3}
+      propertyPath: breakForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6953,3 +7021,4 @@ SceneRoots:
   - {fileID: 2619136179901489643}
   - {fileID: 1226261541}
   - {fileID: 1905738237}
+  - {fileID: 523118510}
