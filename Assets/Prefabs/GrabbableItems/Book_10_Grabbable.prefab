@@ -52,8 +52,10 @@ MonoBehaviour:
   breakForce: 1
   maxCreatureCount: 8
   breakVFXPrefab: {fileID: 0}
+  brokenMaterial: {fileID: 2100000, guid: 57ac7072a3dc53e429cc71777403e861, type: 2}
   breakSFX: {fileID: 0}
   impactSFX: []
+  impactSoundDelay: 0.2
   meshRenderers:
   - {fileID: 396670065467567178}
 --- !u!33 &2478587398144481408

@@ -295,13 +295,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31679ca2b96a47ef8cebb81930e40d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grabber
+  launchForce: 20
+  isHolding: 0
+  springStrength: 300
+  damping: 20
+  breakDistance: 6
   grabberLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  grabbableObject: {fileID: 0}
-  launchForce: 20
-  springStrength: 300
-  damping: 20
+  maxDistance: 3
 --- !u!1 &7664426608476124781
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +482,8 @@ MonoBehaviour:
   PitchMin: -80
   PitchSensistivity: 0.1
   YawSensitivity: 0.1
+  movementSpeed: 1
+  sprintSpeed: 2
   camera: {fileID: 305086532324457652}
 --- !u!143 &8787917033155384404
 CharacterController:

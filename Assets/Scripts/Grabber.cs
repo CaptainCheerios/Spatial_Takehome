@@ -28,29 +28,45 @@ public class Grabber : MonoBehaviour
         }
         else
         {
+            Debug.Log("Grabbing object");
             GrabObject();
         }
     }
 
     private void GrabObject()
     {
-        Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, grabberLayerMask);
-        if (hit.collider == null) return;
-
-        var grabbed = hit.collider.gameObject.GetComponent<GrabbableObject>();
-        if (grabbed == null) return;
-
-        targetedObject = grabbed;
+        if (targetedObject == null)
+            return;
+        Debug.Log($"Grabbed object {targetedObject.name}");
+        isHolding = true;
+    }
+    
+    
+    private void DropGrabbedObject()
+    {
+        isHolding = false;
     }
 
     private void FixedUpdate()
     {
         if (!isHolding) return;
+        if (targetedObject.isBroken)
+        {
+            DropGrabbedObject();
+            return;
+        }
 
         Vector3 displacement = transform.position - targetedObject.transform.position;
+
+        // Sanity leash: object stuck behind a wall, etc.
+        if (displacement.sqrMagnitude > breakDistance * breakDistance)
+        {
+            DropGrabbedObject();
+            return;
+        }
+
         Vector3 springForce = displacement * springStrength;
         Vector3 dampForce = -targetedObject.rigidBody.linearVelocity * damping;
-
         targetedObject.rigidBody.AddForce(springForce + dampForce);
     }
 
@@ -64,19 +80,15 @@ public class Grabber : MonoBehaviour
             var grabbableObject = hit.collider.gameObject.GetComponent<GrabbableObject>();
             if (grabbableObject)
             {
-                if (targetedObject && grabbableObject != targetedObject)
+                if (!targetedObject  || grabbableObject != targetedObject)
                 {
+                    Debug.Log("Hit object");
                     //grabbableObject.ToggleHighlight(false);
                     targetedObject = grabbableObject;
                         //grabbableObject.ToggleHighlight(true);
                 }
             }
         }
-    }
-
-    private void DropGrabbedObject()
-    {
-        
     }
 
     public void LaunchGrabbedObject()
