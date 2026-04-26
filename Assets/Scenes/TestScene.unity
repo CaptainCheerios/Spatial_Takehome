@@ -6941,10 +6941,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_1
       objectReference: {fileID: 0}
-    - target: {fileID: 9149224886979190117, guid: 382471a68bcedb042af1784c23524cf1, type: 3}
-      propertyPath: breakForce
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

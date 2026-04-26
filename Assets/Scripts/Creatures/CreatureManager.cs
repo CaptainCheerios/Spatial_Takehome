@@ -14,7 +14,7 @@ public class CreatureManager : MonoBehaviour
     
     private ObjectPool<Creature> creaturePool;
     
-    private Dictionary<int, Creature> creatureActiveMap = new Dictionary<int, Creature>();
+    private Dictionary<int, Creature> creatureActiveMap = new Dictionary<int, Creature>(240);
     
     
     private void Awake()

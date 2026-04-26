@@ -5,7 +5,11 @@ using UnityEngine.InputSystem;
 public class Grabber : MonoBehaviour
 {
     [NonSerialized]
-    public GrabbableObject targetedObject;
+    private GrabbableObject targetedObject;
+
+    public GrabbableObject grabbedObject;
+
+    [SerializeField] private Transform raycastTransform;
 
     public float launchForce = 10f;
 
@@ -37,24 +41,25 @@ public class Grabber : MonoBehaviour
         if (targetedObject == null)
             return;
         isHolding = true;
+        grabbedObject = targetedObject;
     }
     
     
-    private void DropGrabbedObject()
+    public void DropGrabbedObject()
     {
         isHolding = false;
     }
 
     private void FixedUpdate()
     {
-        if (!isHolding) return;
-        if (targetedObject.isBroken)
+        if (!isHolding || !grabbedObject) return;
+        if (grabbedObject.isBroken)
         {
             DropGrabbedObject();
             return;
         }
 
-        Vector3 displacement = transform.position - targetedObject.transform.position;
+        Vector3 displacement = transform.position - grabbedObject.transform.position;
 
         // Sanity leash: object stuck behind a wall, etc.
         if (displacement.sqrMagnitude > breakDistance * breakDistance)
@@ -64,8 +69,8 @@ public class Grabber : MonoBehaviour
         }
 
         Vector3 springForce = displacement * springStrength;
-        Vector3 dampForce = -targetedObject.rigidBody.linearVelocity * damping;
-        targetedObject.rigidBody.AddForce(springForce + dampForce);
+        Vector3 dampForce = -grabbedObject.rigidBody.linearVelocity * damping;
+        grabbedObject.rigidBody.AddForce(springForce + dampForce);
     }
 
     private void Update()
@@ -73,7 +78,7 @@ public class Grabber : MonoBehaviour
         if (isHolding)
             return;
 
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, grabberLayerMask))
+        if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out RaycastHit hit, grabberLayerMask))
         {
             var grabbableObject = hit.collider.gameObject.GetComponent<GrabbableObject>();
             if (grabbableObject)
@@ -89,11 +94,13 @@ public class Grabber : MonoBehaviour
         }
     }
 
-    public void LaunchGrabbedObject()
+    public void LaunchGrabbedObject(InputAction.CallbackContext context)
     {
+        if(!context.performed)
+            return;
         if(!isHolding)
             return;
-        targetedObject.rigidBody.AddForce(transform.forward * launchForce, ForceMode.Impulse);
-        targetedObject = null;
+        grabbedObject.rigidBody.AddForce(transform.forward * launchForce, ForceMode.Impulse);
+        grabbedObject = null;
     }
 }

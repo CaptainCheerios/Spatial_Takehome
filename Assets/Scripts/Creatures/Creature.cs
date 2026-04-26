@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Creature : MonoBehaviour
@@ -6,6 +7,7 @@ public class Creature : MonoBehaviour
 
     public Rigidbody Rigidbody;
     [SerializeField] private float spawnImpulse;
+    [SerializeField] private AudioClip[] capturedSFX;
 
     public ICreatureState currentState = new IdleState();
     public void Spawn(Vector3 position)
@@ -21,9 +23,11 @@ public class Creature : MonoBehaviour
 
     public void Captured()
     {
-
+        var audioClip = capturedSFX[Random.Range(0, capturedSFX.Length)];
+        AudioSource.PlayClipAtPoint(audioClip, this.transform.position);
         CaptureGameMode.Instance.Captured();
         CreatureManager.Instance.Release(this);
+        Debug.Log($"Captured creature {creatureIndex}");
     }
 
     public void Tick()
