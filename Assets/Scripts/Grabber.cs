@@ -83,7 +83,8 @@ public class Grabber : MonoBehaviour
         if (isHolding)
             return;
 
-        if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out RaycastHit hit, grabberLayerMask))
+        if (Physics.Raycast(raycastTransform.position, raycastTransform.forward,
+                out RaycastHit hit, maxDistance, grabberLayerMask))
         {
             var grabbableObject = hit.collider.gameObject.GetComponent<GrabbableObject>();
             if (grabbableObject)
