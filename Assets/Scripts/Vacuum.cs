@@ -40,6 +40,8 @@ public class Vacuum : MonoBehaviour
     private HashSet<Creature> trackedCreatures = new();
     private HashSet<Creature> pullingCreatures = new();
 
+    [SerializeField] private ParticleSystem[] particleEffects;
+
     private void OnValidate()
     {
         if (triggerSphere)
@@ -84,10 +86,18 @@ public class Vacuum : MonoBehaviour
         if (state)
         {
             vacuumSound.Play();
+            foreach (var particleEffect in particleEffects)
+            {
+                particleEffect.Play();
+            }
         }
         else
         {
             vacuumSound.Stop();
+            foreach (var particleEffect in particleEffects)
+            {
+                particleEffect.Stop();
+            }
         }
     }
 
