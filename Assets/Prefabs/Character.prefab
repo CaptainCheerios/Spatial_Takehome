@@ -58,7 +58,12 @@ MonoBehaviour:
   maxRange: 6.04
   captureDistance: 0.25
   maxAngle: 15
+  breakConnectionAngle: 45
   vacuumPullForce: 10
+  axialPullSpeed: 10
+  radialPullSpeed: 4
+  radialStiffness: 10
+  pullAcceleration: 60
   debugRayCount: 16
   debugConeColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!135 &2132726520229909853
