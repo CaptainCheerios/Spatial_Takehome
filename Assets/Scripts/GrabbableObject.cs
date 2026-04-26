@@ -92,7 +92,7 @@ public class GrabbableObject : MonoBehaviour
             AudioSource.PlayClipAtPoint(breakSFX, this.transform.position);
         if (breakVFXPrefab)
              Instantiate(breakVFXPrefab, this.transform.position, Quaternion.identity);
-        EnableHighlight(false);
+        SetHighlight(false);
         
         //Spawn Creatures
         for (int i = 0; i < maxCreatureCount; i++)
@@ -101,7 +101,7 @@ public class GrabbableObject : MonoBehaviour
         }
     }
 
-    public void EnableHighlight(bool enable)
+    public void SetHighlight(bool enable)
     {
         //TODO: ENALE HIGHLIGHT EFFECT
     }

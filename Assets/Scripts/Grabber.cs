@@ -28,7 +28,6 @@ public class Grabber : MonoBehaviour
         }
         else
         {
-            Debug.Log("Grabbing object");
             GrabObject();
         }
     }
@@ -37,7 +36,6 @@ public class Grabber : MonoBehaviour
     {
         if (targetedObject == null)
             return;
-        Debug.Log($"Grabbed object {targetedObject.name}");
         isHolding = true;
     }
     
@@ -80,12 +78,12 @@ public class Grabber : MonoBehaviour
             var grabbableObject = hit.collider.gameObject.GetComponent<GrabbableObject>();
             if (grabbableObject)
             {
-                if (!targetedObject  || grabbableObject != targetedObject)
+                if (grabbableObject != targetedObject)
                 {
-                    Debug.Log("Hit object");
-                    //grabbableObject.ToggleHighlight(false);
+                    if(targetedObject)
+                        targetedObject.SetHighlight(false);
                     targetedObject = grabbableObject;
-                        //grabbableObject.ToggleHighlight(true);
+                        grabbableObject.SetHighlight(true);
                 }
             }
         }
