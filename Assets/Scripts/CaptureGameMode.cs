@@ -10,6 +10,9 @@ public class CaptureGameMode : MonoBehaviour
     public bool allContainersBroken;
     public float timerLength = 120f;
 
+    public int totalCreatures = 0;
+    public int totalGrabbableObjects = 0;
+
     private void Awake()
     {
         if (Instance)
@@ -19,13 +22,13 @@ public class CaptureGameMode : MonoBehaviour
 
     public void CountAllCreatureSpawns()
     {
-        int maxSpawns = 0;
         var grabbableObjects =
             FindObjectsByType<GrabbableObject>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         foreach (GrabbableObject grabbableObject in grabbableObjects)
         {
-            maxSpawns+= grabbableObject.maxCreatureCount;
+            totalCreatures+= grabbableObject.maxCreatureCount;
         }
+        totalGrabbableObjects = grabbableObjects.Length;
     }
 
     public void RegisterCreature()
