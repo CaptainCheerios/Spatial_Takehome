@@ -51,10 +51,16 @@ MonoBehaviour:
   rigidBody: {fileID: -297558322304554669}
   breakForce: 1
   maxCreatureCount: 8
+  critterSpawnRadius: 0.1
   breakVFXPrefab: {fileID: 0}
   brokenMaterial: {fileID: 2100000, guid: 57ac7072a3dc53e429cc71777403e861, type: 2}
-  breakSFX: {fileID: 0}
-  impactSFX: []
+  breakSFX: {fileID: 8300000, guid: a8b233ed2f26cb743a51d27cb2367957, type: 3}
+  impactSFX:
+  - {fileID: 8300000, guid: c57ecdfa0f043eb4cb770e32b52c6e4b, type: 3}
+  - {fileID: 8300000, guid: 67fd87fe45a3ed745921d3cb722ec905, type: 3}
+  - {fileID: 8300000, guid: f252b3b9113b0364b9038643a639d672, type: 3}
+  - {fileID: 8300000, guid: 26d3632493287b44e804e63583211f2b, type: 3}
+  - {fileID: 8300000, guid: cacf6af2f39c51f428ef7069c25015b2, type: 3}
   impactSoundDelay: 0.2
   meshRenderers:
   - {fileID: 1593227842209925454}

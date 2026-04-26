@@ -7013,6 +7013,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4769898062613547213, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: captureDistance
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769898062613547213, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: radialPullSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769898062613547213, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
       propertyPath: particleEffects.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -7028,6 +7036,10 @@ PrefabInstance:
       propertyPath: 'particleEffects.Array.data[2]'
       value: 
       objectReference: {fileID: 887069918}
+    - target: {fileID: 5900599744668758632, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.235
+      objectReference: {fileID: 0}
     - target: {fileID: 5986830512304132869, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
       propertyPath: stopAction
       value: 0
