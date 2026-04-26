@@ -23,7 +23,7 @@ public class ScooperCharacterController : MonoBehaviour
     private float _leftInput;
     private bool _sprint;
     
-    public Camera camera;
+    public Camera playerCamera;
 
     public void Start()
     {
@@ -32,9 +32,9 @@ public class ScooperCharacterController : MonoBehaviour
 
         // Initialize rotation based on the transform so the camera doesn't snap to 0,0,0
         _currentYaw = transform.localRotation.eulerAngles.y;
-        if (camera != null)
+        if (playerCamera != null)
         {
-            _currentPitch = camera.transform.localRotation.eulerAngles.x;
+            _currentPitch = playerCamera.transform.localRotation.eulerAngles.x;
             if (_currentPitch > 180f)
             {
                 _currentPitch -= 360f;
@@ -107,9 +107,9 @@ public class ScooperCharacterController : MonoBehaviour
         characterController.Move(moveDirection * (Time.deltaTime * (_sprint? sprintSpeed : movementSpeed )));
         
         transform.localRotation = Quaternion.Euler(0, _currentYaw, 0);
-        if (camera != null)
+        if (playerCamera != null)
         {
-            camera.transform.localRotation = Quaternion.Euler(_currentPitch, 0, 0);
+            playerCamera.transform.localRotation = Quaternion.Euler(_currentPitch, 0, 0);
         }
     }
 }

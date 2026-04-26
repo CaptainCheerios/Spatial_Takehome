@@ -18,7 +18,6 @@ public class Vacuum : MonoBehaviour
     [SerializeField] private float maxRange = 2f;
     [SerializeField] private float captureDistance = 0.05f;
     [SerializeField] private float maxAngle = 15f;
-    [SerializeField] private float breakConnectionAngle = 45f;
     
     [Header("Settings/Vacuum Forces")]
     //How fast it pulls

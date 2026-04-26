@@ -19,6 +19,8 @@ public class Grabber : MonoBehaviour
     public float springStrength = 500f;
     public float damping = 20f;
     public float breakDistance = 6f;
+    public BeamVFX beam;
+    public Transform grabberTransform;
     
     [Header("Grabber RayCast")]
     public LayerMask grabberLayerMask;
@@ -48,6 +50,8 @@ public class Grabber : MonoBehaviour
     public void DropGrabbedObject()
     {
         isHolding = false;
+        grabbedObject = null;
+        beam.Hide();
     }
 
     private void FixedUpdate()
@@ -59,7 +63,7 @@ public class Grabber : MonoBehaviour
             return;
         }
 
-        Vector3 displacement = transform.position - grabbedObject.transform.position;
+        Vector3 displacement = grabberTransform.position - grabbedObject.transform.position;
 
         // Sanity leash: object stuck behind a wall, etc.
         if (displacement.sqrMagnitude > breakDistance * breakDistance)
@@ -71,6 +75,7 @@ public class Grabber : MonoBehaviour
         Vector3 springForce = displacement * springStrength;
         Vector3 dampForce = -grabbedObject.rigidBody.linearVelocity * damping;
         grabbedObject.rigidBody.AddForce(springForce + dampForce);
+        beam.DrawBeam(grabbedObject.transform.position);
     }
 
     private void Update()
@@ -93,7 +98,8 @@ public class Grabber : MonoBehaviour
             }
             else
             {
-                targetedObject.SetHighlight(false);
+                if(targetedObject)
+                    targetedObject.SetHighlight(false);
                 targetedObject = null;
             }
         }
@@ -105,7 +111,7 @@ public class Grabber : MonoBehaviour
             return;
         if(!isHolding)
             return;
-        grabbedObject.rigidBody.AddForce(transform.forward * launchForce, ForceMode.Impulse);
+        grabbedObject.rigidBody.AddForce(grabberTransform.forward * launchForce, ForceMode.Impulse);
         grabbedObject = null;
     }
 }
