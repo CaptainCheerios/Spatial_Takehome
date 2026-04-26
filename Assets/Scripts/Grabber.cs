@@ -91,8 +91,8 @@ public class Grabber : MonoBehaviour
 
     public void LaunchGrabbedObject()
     {
-        if (targetedObject == null) return;
-
+        if(!isHolding)
+            return;
         targetedObject.rigidBody.AddForce(transform.forward * launchForce, ForceMode.Impulse);
         targetedObject = null;
     }
