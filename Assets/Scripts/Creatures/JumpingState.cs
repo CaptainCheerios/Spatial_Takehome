@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class JumpingState : ICreatureState
 {
-    public float jumpDelay = 4f;
+    public float jumpDelay = 2f;
     private float lastJumpTime = 0;
     public void Tick(Creature self)
     {
