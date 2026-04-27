@@ -10,6 +10,7 @@ public class Creature : MonoBehaviour
     [SerializeField] private AudioClip[] capturedSFX;
 
     public ICreatureState currentState = new IdleState();
+    
     public void Spawn(Vector3 position)
     {
         transform.position = position;
@@ -18,16 +19,15 @@ public class Creature : MonoBehaviour
         Rigidbody.angularVelocity = Vector3.zero;
         Rigidbody.AddForce(Random.onUnitSphere * spawnImpulse, ForceMode.Impulse);
         currentState = new IdleState();
-        // CaptureGameMode.Instance.RegisterCreature();
+        CreatureAndSpawnerCounter.Instance.RegisterCreature();
     }
 
     public void Captured()
     {
         var audioClip = capturedSFX[Random.Range(0, capturedSFX.Length)];
         AudioSource.PlayClipAtPoint(audioClip, this.transform.position);
-        CaptureGameMode.Instance.Captured();
+        CreatureAndSpawnerCounter.Instance.Captured();
         CreatureManager.Instance.Release(this);
-        Debug.Log($"Captured creature {creatureIndex}");
     }
 
     public void Tick()

@@ -27,9 +27,6 @@ public class ScooperCharacterController : MonoBehaviour
 
     public void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
         // Initialize rotation based on the transform so the camera doesn't snap to 0,0,0
         _currentYaw = transform.localRotation.eulerAngles.y;
         if (playerCamera != null)

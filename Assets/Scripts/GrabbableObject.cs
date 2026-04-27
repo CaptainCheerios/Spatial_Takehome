@@ -98,7 +98,7 @@ public class GrabbableObject : MonoBehaviour
         if (breakVFXPrefab)
              Instantiate(breakVFXPrefab, this.transform.position, Quaternion.identity);
         SetHighlight(false);
-        
+        CreatureAndSpawnerCounter.Instance.GrabbableBroken();
         //Spawn Creatures
         for (int i = 0; i < maxCreatureCount; i++)
         {

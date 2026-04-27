@@ -20,7 +20,11 @@ public class CreatureManager : MonoBehaviour
     private void Awake()
     {
         if (Instance)
+        {
             Destroy(this);
+            return;
+        }
+
         Instance = this;
         
         //Create the pool
