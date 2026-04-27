@@ -1545,7 +1545,7 @@ MonoBehaviour:
   grabberLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  maxDistance: 3
+  maxDistance: 8
 --- !u!1 &7664426608476124781
 GameObject:
   m_ObjectHideFlags: 0
