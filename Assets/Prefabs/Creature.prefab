@@ -229,15 +229,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Creature
   creatureIndex: -1
   Rigidbody: {fileID: 5407761120047758362}
-  spawnImpulse: 0.5
+  spawnImpulse: 3
   capturedSFX:
   - {fileID: 8300000, guid: f688f3bfcfd097b48909dee94f306a41, type: 3}
   - {fileID: 8300000, guid: 06456bf27dbbbd8448b3922ee60b2e04, type: 3}
   - {fileID: 8300000, guid: bdd313ad11f2ffc4b8002c65d2e47644, type: 3}
-  spawnClearanceRadius: 0.25
+  spawnClearanceRadius: 0.35
   spawnBlockers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
+  jumpForce: 2
 --- !u!135 &6413944506829106879
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0.5
-  m_AngularDamping: 0.5
+  m_AngularDamping: 1.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
