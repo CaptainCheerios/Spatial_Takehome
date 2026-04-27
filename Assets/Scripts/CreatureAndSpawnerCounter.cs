@@ -29,6 +29,7 @@ public class CreatureAndSpawnerCounter : MonoBehaviour
     
     public void CountAllCreatureSpawns()
     {
+        totalCreatures = 0;
         var grabbableObjects =
             FindObjectsByType<GrabbableObject>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         foreach (GrabbableObject grabbableObject in grabbableObjects)
