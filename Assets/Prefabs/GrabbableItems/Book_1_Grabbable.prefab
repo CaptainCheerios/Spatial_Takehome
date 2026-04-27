@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabbableObject
   rigidBody: {fileID: 7971391703507049374}
-  breakForce: 10
+  breakForce: 3
   maxCreatureCount: 2
   critterSpawnRadius: 0.1
   breakVFXPrefab: {fileID: 0}

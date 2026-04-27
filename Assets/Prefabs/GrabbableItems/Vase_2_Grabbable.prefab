@@ -177,6 +177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vase_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1602938306099982326, guid: fbd16487fa9dfa94e92f0e189892d658, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

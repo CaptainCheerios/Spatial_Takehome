@@ -1537,14 +1537,14 @@ MonoBehaviour:
   raycastTransform: {fileID: 9197087757356991667}
   launchForce: 8
   isHolding: 0
-  springStrength: 300
+  springStrength: 100
   damping: 20
   breakDistance: 6
   beam: {fileID: 5908116075352092655}
   grabberTransform: {fileID: 9189624019314975699}
   grabberLayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 520
   maxDistance: 8
 --- !u!1 &7664426608476124781
 GameObject:

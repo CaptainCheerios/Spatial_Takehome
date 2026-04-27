@@ -11607,6 +11607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6681786516564050291, guid: 32f91777b4c4e9f43b99e2e6fa09f1a8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6918425495813803520, guid: 32f91777b4c4e9f43b99e2e6fa09f1a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.95
@@ -11883,9 +11887,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6979010903605966495, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
-      propertyPath: springStrength
-      value: 100
+    - target: {fileID: 2132726520229909853, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: m_Radius
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769898062613547213, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: maxAngle
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769898062613547213, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: maxRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769898062613547213, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
+      propertyPath: captureDistance
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7664426608476124781, guid: 97ffdefca18e8d141b6f94baae80b5af, type: 3}
       propertyPath: m_Name
