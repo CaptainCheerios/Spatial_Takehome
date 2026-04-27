@@ -30,16 +30,21 @@ public class GrabbableObject : MonoBehaviour
 
     private float lastImpactSoundTime = 0;
 
-    [SerializeField] private MeshRenderer[] meshRenderers; 
-    
+    [SerializeField] private MeshRenderer[] meshRenderers;
+
     private void OnValidate()
     {
         //So I don't have to deal with assigning these
         List<MeshRenderer> meshRenderersFound = GetComponents<MeshRenderer>().ToList();
         meshRenderersFound.AddRange(GetComponentsInChildren<MeshRenderer>());
-        if (meshRenderers.Length == 0)
+        if (meshRenderersFound.Count == 0)
         {
-            Debug.LogWarning($"{this.name} was unable to find any mesh renderers" );
+            Debug.LogWarning($"{this.name} was unable to find any mesh renderers");
+        }
+        else
+        {
+            meshRenderers = meshRenderersFound.ToArray();
+            Debug.Log($"Assigning Mesh Renderers to {this.name}");
         }
 
         if (rigidBody == null)
