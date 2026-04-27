@@ -234,6 +234,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f688f3bfcfd097b48909dee94f306a41, type: 3}
   - {fileID: 8300000, guid: 06456bf27dbbbd8448b3922ee60b2e04, type: 3}
   - {fileID: 8300000, guid: bdd313ad11f2ffc4b8002c65d2e47644, type: 3}
+  spawnClearanceRadius: 0.25
+  spawnBlockers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!135 &6413944506829106879
 SphereCollider:
   m_ObjectHideFlags: 0

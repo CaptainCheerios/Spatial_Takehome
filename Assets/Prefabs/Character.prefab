@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Grabber
   grabbedObject: {fileID: 0}
   raycastTransform: {fileID: 9197087757356991667}
-  launchForce: 20
+  launchForce: 8
   isHolding: 0
   springStrength: 300
   damping: 20
@@ -1802,7 +1802,7 @@ MonoBehaviour:
   PitchSensistivity: 0.1
   YawSensitivity: 0.1
   movementSpeed: 3
-  sprintSpeed: 2
+  sprintSpeed: 6
   playerCamera: {fileID: 305086532324457652}
 --- !u!143 &8787917033155384404
 CharacterController:

@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SetState(GameState.StartMenu);
+        CreatureAndSpawnerCounter.Instance.OnAllCaptured += () => EndLevel(true);
     }
     
     

@@ -35,6 +35,7 @@ public class CreatureManager : MonoBehaviour
                 creature.gameObject.SetActive(false);
                 creature.creatureIndex = creatureID;
                 creatureID++;
+                creature.PhaseOffset = UnityEngine.Random.Range(0f, 1f);
                 return creature;
             },
             actionOnGet: creature => { creature.Spawn(spawnPosition); },

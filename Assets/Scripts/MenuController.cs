@@ -7,6 +7,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private TMP_Text endHeader;
+    [SerializeField] private TMP_Text resultHeader;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class MenuController : MonoBehaviour
             float timeRemaining = GameManager.Instance.TimeRemaining;
             int minutes = Mathf.FloorToInt(timeRemaining / 60);
             int seconds = Mathf.FloorToInt(timeRemaining % 60);
+            resultHeader.text = GameManager.Instance.GameWon ? "YOU WON!!!!" : "TIMES UP!";
             endHeader.text = $"Time Remaining: {minutes:00}:{seconds:00}" + 
                              $"\nTotal Creatures Caught:{CreatureAndSpawnerCounter.Instance.captured}" +
                              $"/{CreatureAndSpawnerCounter.Instance.totalCreatures}";

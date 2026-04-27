@@ -114,8 +114,13 @@ public class Vacuum : MonoBehaviour
         var creature = other.GetComponent<Creature>();
         if (creature)
         {
-            pullingCreatures.Remove(creature);
+            if (pullingCreatures.Contains(creature))
+            {
+                creature.SwitchToState(Creature.BehaviorState.Jumping);
+                pullingCreatures.Remove(creature);
+            }
             trackedCreatures.Remove(creature);
+            
         }
 
     }
@@ -149,8 +154,12 @@ public class Vacuum : MonoBehaviour
             bool inCone = angle <= maxAngle;
             if (!inCone && !pullingCreatures.Contains(creature))
                 continue;
-            pullingCreatures.Add(creature);
-            
+            if (!pullingCreatures.Contains(creature))
+            {
+                pullingCreatures.Add(creature);
+                creature.SwitchToState(Creature.BehaviorState.Idle);
+            }
+
             float axialOffset = Vector3.Dot(toCreature, axisDir);
             Vector3 radialVec = toCreature - axisDir * axialOffset;
             float radialDist = radialVec.magnitude;
