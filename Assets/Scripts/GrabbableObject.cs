@@ -34,26 +34,34 @@ public class GrabbableObject : MonoBehaviour
 
     private void OnValidate()
     {
-        //So I don't have to deal with assigning these
-        List<MeshRenderer> meshRenderersFound = GetComponents<MeshRenderer>().ToList();
-        meshRenderersFound.AddRange(GetComponentsInChildren<MeshRenderer>());
-        if (meshRenderersFound.Count == 0)
+        if (!Application.isPlaying)
         {
-            Debug.LogWarning($"{this.name} was unable to find any mesh renderers");
-        }
-        else
-        {
-            meshRenderers = meshRenderersFound.ToArray();
-            Debug.Log($"Assigning Mesh Renderers to {this.name}");
-        }
+            //So I don't have to deal with assigning these
+            List<MeshRenderer> meshRenderersFound = GetComponents<MeshRenderer>().ToList();
+            meshRenderersFound.AddRange(GetComponentsInChildren<MeshRenderer>());
+            if (meshRenderersFound.Count == 0)
+            {
+                Debug.LogWarning($"{this.name} was unable to find any mesh renderers");
+            }
+            else
+            {
+                meshRenderers = meshRenderersFound.ToArray();
+                Debug.Log($"Assigning Mesh Renderers to {this.name}");
+            }
 
-        if (rigidBody == null)
-        {
-            rigidBody = GetComponent<Rigidbody>();
             if (rigidBody == null)
-                Debug.LogWarning($"{this.name} is missing a rigidbody component");
-        }
+            {
+                rigidBody = GetComponent<Rigidbody>();
+                if (rigidBody == null)
+                    Debug.LogWarning($"{this.name} is missing a rigidbody component");
+            }
 
+
+            foreach (var meshRenderer in meshRenderers)
+            {
+                meshRenderer.renderingLayerMask = 1;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

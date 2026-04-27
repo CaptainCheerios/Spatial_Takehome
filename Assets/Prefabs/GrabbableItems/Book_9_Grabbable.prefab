@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrabbableObject
   rigidBody: {fileID: 4676931720363815641}
   breakForce: 1
-  maxCreatureCount: 8
+  maxCreatureCount: 4
   critterSpawnRadius: 0.1
   breakVFXPrefab: {fileID: 0}
   brokenMaterial: {fileID: 2100000, guid: 57ac7072a3dc53e429cc71777403e861, type: 2}
@@ -95,7 +95,7 @@ MeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 821316d92fc12fe4d9d7387a78f37f89, type: 2}

@@ -8,8 +8,9 @@ public class CreatureAndSpawnerCounter : MonoBehaviour
     public int spawned { get; private set; } = 0;
     public int captured { get;private set; } = 0;
     public bool allContainersBroken {get ; private set;} = false;
-    public int totalCreatures { get; private set; }= 0;
-    public int totalGrabbableObjects { get; private set; } = 0;
+    
+    public int totalCreatures;
+    public int totalGrabbableObjects;
     public int brokenGrabbableObjects { get; private set; } = 0;
     
     public event Action OnAllCaptured;
