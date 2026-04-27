@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         if (!context.performed)
             return;
+        TogglePause();
     }
 
     public void TogglePause()

@@ -23,10 +23,12 @@ public class HUD : MonoBehaviour
     {
         if (state != GameManager.GameState.Playing)
         {
+            
             canvas.enabled = false;
         }
         else
         {
+            Debug.Log("Enable the hud");
             canvas.enabled = true;
         }
     }
@@ -40,6 +42,6 @@ public class HUD : MonoBehaviour
     void UpdateCounter()
     {
         var cc = CreatureAndSpawnerCounter.Instance;
-        counterText.text = $"Captured {cc.captured} / {cc.spawned}";
+        counterText.text = $"Captured {cc.captured} / {cc.totalCreatures}";
     }
 }
