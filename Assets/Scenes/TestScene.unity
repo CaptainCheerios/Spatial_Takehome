@@ -1124,8 +1124,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 0
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2345,6 +2345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523118510}
   - component: {fileID: 523118509}
+  - component: {fileID: 523118511}
   m_Layer: 0
   m_Name: CreatureManager
   m_TagString: Untagged
@@ -2382,6 +2383,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523118511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523118508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6709c628d0c4f29acddeef1c2d84a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureAndSpawnerCounter
 --- !u!1 &537778984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3594,6 +3607,7 @@ GameObject:
   - component: {fileID: 679659039}
   - component: {fileID: 679659041}
   - component: {fileID: 679659040}
+  - component: {fileID: 679659042}
   m_Layer: 5
   m_Name: Menus
   m_TagString: Untagged
@@ -3679,16 +3693,16 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 0}
-  m_SubmitAction: {fileID: 0}
-  m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: -1353438025020902251, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
-  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_PointAction: {fileID: 2286924451464183343, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_MoveAction: {fileID: -5362825358662561316, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_SubmitAction: {fileID: 434083200154609723, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_CancelAction: {fileID: 8812691183008465747, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_LeftClickAction: {fileID: 1135418828057521719, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_MiddleClickAction: {fileID: -9020529138356101034, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_RightClickAction: {fileID: -5304741523737108163, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_ScrollWheelAction: {fileID: -5959446225982351275, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -6797623532750583306, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 5595076371592631171, guid: e4963b758cba9aa488be361d6f5157ff, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -3708,6 +3722,23 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 50652923}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &679659042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679659036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &689200735
 GameObject:
   m_ObjectHideFlags: 0
@@ -10085,6 +10116,7 @@ MonoBehaviour:
   timerText: {fileID: 1031706302}
   counterText: {fileID: 447368194}
   crosshair: {fileID: 1608906647}
+  canvas: {fileID: 0}
 --- !u!1 &2090460335
 GameObject:
   m_ObjectHideFlags: 0

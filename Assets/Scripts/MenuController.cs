@@ -25,13 +25,13 @@ public class MenuController : MonoBehaviour
             int minutes = Mathf.FloorToInt(timeRemaining / 60);
             int seconds = Mathf.FloorToInt(timeRemaining % 60);
             endHeader.text = $"Time Remaining: {minutes:00}:{seconds:00}" + 
-                             "\nTotal Creatures Caught:{CreatureAndSpawnerCounter.Instance.captured}" +
-                             "/{CreatureAndSpawnerCounter.Instance.totalCreatures}";
+                             $"\nTotal Creatures Caught:{CreatureAndSpawnerCounter.Instance.captured}" +
+                             $"/{CreatureAndSpawnerCounter.Instance.totalCreatures}";
         }
     }
 
     public void OnStart()   => GameManager.Instance.StartGame();
-    public void OnResume()  => GameManager.Instance.TogglePause(default);
+    public void OnResume()  => GameManager.Instance.TogglePause();
     public void OnRestart() => GameManager.Instance.Restart();
     public void OnQuit()    => GameManager.Instance.Quit();
 }

@@ -12,11 +12,11 @@ public class HUD : MonoBehaviour
     void Start()
     {
         GameManager.Instance.OnTimerTick += UpdateTimer;
-        GameManager.Instance.OnStateChanged += 
-            state => crosshair.SetActive(state == GameManager.GameState.Playing);
+        GameManager.Instance.OnStateChanged += UIStateChanged;
         CreatureAndSpawnerCounter.Instance.OnCreatureCaptured += UpdateCounter;
         UpdateTimer(); 
         UpdateCounter();
+        UIStateChanged(GameManager.Instance.State);
     }
 
     void UIStateChanged(GameManager.GameState state)

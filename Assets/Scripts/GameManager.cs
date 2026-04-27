@@ -56,10 +56,14 @@ public class GameManager : MonoBehaviour
         SetState(GameState.Playing);
     }
 
-    public void TogglePause(InputAction.CallbackContext context)
+    public void TogglePauseInput(InputAction.CallbackContext context)
     {
         if (!context.performed)
             return;
+    }
+
+    public void TogglePause()
+    {
         if(State == GameState.Playing)
             SetState(GameState.Paused);
         else if (State == GameState.Paused)
