@@ -17,12 +17,13 @@ public class MenuController : MonoBehaviour
 
     void OnState(GameManager.GameState s)
     {
+        
         startPanel.SetActive(s == GameManager.GameState.StartMenu);
         pausePanel.SetActive(s == GameManager.GameState.Paused);
         endPanel.SetActive(s == GameManager.GameState.Ended);
         if (s == GameManager.GameState.Ended)
         {
-            float timeRemaining = GameManager.Instance.TimeRemaining;
+            float timeRemaining = Mathf.Max(0f, GameManager.Instance.TimeRemaining);
             int minutes = Mathf.FloorToInt(timeRemaining / 60);
             int seconds = Mathf.FloorToInt(timeRemaining % 60);
             resultHeader.text = GameManager.Instance.GameWon ? "YOU WON!!!!" : "TIMES UP!";
