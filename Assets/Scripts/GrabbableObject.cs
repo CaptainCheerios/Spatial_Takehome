@@ -16,7 +16,7 @@ public class GrabbableObject : MonoBehaviour
     [Header("Breaking Stuff")]
     public float breakForce = 1f;
     [NonSerialized] public bool isBroken = false;
-    [Range(0,8)] public int maxCreatureCount = 8;
+    [Range(0,100)] public int maxCreatureCount = 8;
     public float critterSpawnRadius = 0.1f;
     
     [Header("Visuals/FX")]

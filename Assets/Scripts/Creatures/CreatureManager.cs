@@ -9,7 +9,7 @@ public class CreatureManager : MonoBehaviour
 
     [Header("Creature Pool")]
     [SerializeField] private Creature creaturePrefab;
-    [SerializeField] private int creatureMaxCapactiy = 240;
+    [SerializeField] private int creatureMaxCapactiy = 500;
     [SerializeField] private Vector3 spawnPosition = new Vector3(0, -300, 0);
     
     private ObjectPool<Creature> creaturePool;
